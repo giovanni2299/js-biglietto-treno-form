@@ -56,3 +56,30 @@ body{
     height: 200px;
     border-radius: 10px;
 }
+
+.flex-tiket{
+    display: flex;
+}
+
+.flex-tiket-body{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.element{
+    padding: 20px;
+}
+
+.tiket-head{
+    padding: 20px;
+    background-color: #6f6f6f;
+}
+
+#result{
+    margin-top: 20px;
+}
+
+#passengername{
+    margin-top: 20px;
+}

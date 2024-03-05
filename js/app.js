@@ -54,7 +54,7 @@ const inputAgeElement = document.getElementById('age')
 const inputNameElement = document.getElementById('name')
 // console.log(selectNameElement)
 
-
+const titleCarriage = document.getElementById('carriage')
 
 
 //CHIEDERE AL PASSEGGIERO DI IMPOSTARE IL NUMERO DI KM
@@ -112,6 +112,7 @@ submitElement.addEventListener('click', function () {
         console.log('priceOff20:', finalPrice20.toFixed(2))
         document.getElementById('result').innerHTML = finalPrice20.toFixed(2);
         document.getElementById('passengername').innerHTML = inputNameElement.value;
+        document.getElementById('carriage').innerHTML = inputCarriage.value;
 
     } else if (inputAgeElement.value === 'over65') {
         //ALTRIMENTI SE eta > 65
