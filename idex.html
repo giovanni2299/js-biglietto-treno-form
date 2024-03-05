@@ -7,30 +7,61 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div class="container">
+        <h1 class="page-title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
+    </div>
+    <div class="container ">
+        <div class="cta flex">
+            <div class="col-4 decoration">
+                <div>
+
+                    <label for="name">Nome Cognome</label>
+                </div>
+                <input name="name" id="name" type="text" placeholder="Inserisci il nome">
+            </div>
+
+            <div class="col-4 decoration">
+                <div>
+                    <label for="distance">KM da percorrere</label>
+
+                </div>
+                <input name="distance" id="distance" type="text" placeholder="Inserisci la distanza">
+            </div>
     
-    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-    <div>
-        <label for="name">Nome Cognome</label>
-        <input name="name" id="name" type="text" placeholder="Inserisci il nome">
+            <div class="col-4 decoration">
+                <div>
+                    <label for="age">Seleziona l'età</label>
 
-        <label for="distance">KM da percorrere</label>
-        <input name="distance" id="distance" type="text" placeholder="Inserisci la distanza">
+                </div>
+                <select name="age" id="age">
+                    <option value="">Nessuno</option>
+                    <option value="minorenne">Minorenne</option>
+                    <option value="over65">Over 65</option>
+        
+                </select>
 
-        <select name="age" id="age">
-            <option value="">Nessuno</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="over65">Over 65</option>
+            </div>
 
-        </select>
-        <div>
-            <input id="submit" type="submit" value="Genera">
-            <!-- <input type="submit" value="annulla"> -->
+            <div class="submit decoration">
+                <input id="submit" type="submit" value="Genera">
+                <input type="submit" value="annulla">
+    
+            </div>
+           
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="tiket">
+            <h1 id="passengername"></h1>
+            <h1 id="result"></h1>
+            
         </div>
 
-        <h1 id="passengername"></h1>
-        <h1 id="result"></h1>
     </div>
+    
+   
 
 
 
