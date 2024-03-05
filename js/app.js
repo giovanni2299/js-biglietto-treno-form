@@ -79,11 +79,7 @@ const submitElement = document.getElementById('submit')
 console.dir(submitElement)
 
 submitElement.addEventListener('click' ,function(){
-    
-})
-
-
-//SCONTO
+    //SCONTO
 let discount = 0;
 
 //SCONTO PER MINORENNI
@@ -97,6 +93,10 @@ if(selectAgeRangeElement < 18){
     //calcolo lo sconto del 40%
     discount = prezzoBase * 0.4;
 }
+})
+
+
+
 
 
 
