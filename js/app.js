@@ -48,11 +48,11 @@
 
 //EVOLUZIONE ETA
 const inputAgeElement = document.getElementById('age')
-console.log(inputAgeElement)
+//console.log(inputAgeElement);
 
-//EVOLUZIONE CHIEDERE L'ETA
-// const selectAgeRangeElement = document.getElementById('ageRange')
-// console.log(selectAgeRangeElement)
+//EVOLUZIONE CHIEDERE IL NOME
+const inputNameElement = document.getElementById('name')
+// console.log(selectNameElement)
 
 
 
@@ -64,7 +64,7 @@ console.log(inputAgeElement)
 
 //Evoluzione
 const inputDistanceElement = document.getElementById('distance')
-console.log(inputDistanceElement)
+//console.log(inputDistanceElement)
 
 
 
@@ -75,44 +75,56 @@ console.log(inputDistanceElement)
 
 //SUBMIT
 const submitElement = document.getElementById('submit')
-console.dir(submitElement)
+//console.dir(submitElement)
 
 
 
-submitElement.addEventListener('click' ,function(){
+submitElement.addEventListener('click', function () {
+    //nome
+    const name = inputNameElement.value;
+
+
     //eta
-    const age = inputAgeElement.value;
-    console.log(age)
+    const age = parseInt(inputAgeElement.value); // number
+
 
     //km
-    const km = inputDistanceElement.value;
-    console.log(km)
+    const km = parseFloat(inputDistanceElement.value); //float
+
 
 
     //PREZZOBASE
-    let prezzoBase = parseInt(km * 0.21);
+    let prezzoBase = km * 0.21; // float
 
-    //SCONTO
-    let discount = 0;
+    //SCONTO20%
+    priceOff20 = prezzoBase * 0.2; // float
+    finalPrice20 = prezzoBase - priceOff20; // float
 
-//SCONTO PER MINORENNI
-if(age < 18){
-    //SE eta < 18
-    //calcolo lo sconto del 20%
-    priceOff20 = prezzoBase * 0.2;
-    finalPrice20 = prezzoBase - priceOff20
-    console.log('priceOff20:',finalPrice20.toFixed(2))
+    //SCONTO40%
+    priceOff40 = prezzoBase * 0.4; // float
+    finalPrice40 = prezzoBase - priceOff40; // float
 
-}else if (age > 65){
-    //ALTRIMENTI SE eta > 65
-    //calcolo lo sconto del 40%
-    priceOff40 = prezzoBase * 0.4;
-    finalPrice40 = prezzoBase - priceOff40
-    console.log('priceOff40:',finalPrice40.toFixed(2))
 
-}else{
-    console.log('priceFull:',prezzoBase.toFixed(2))
-}
+    //SCONTO PER MINORENNI
+    if (inputAgeElement.value === 'minorenne') {
+        //SE eta < 18
+        //calcolo lo sconto del 20%
+        console.log('priceOff20:', finalPrice20.toFixed(2))
+        document.getElementById('result').innerHTML = finalPrice20.toFixed(2);
+        document.getElementById('passengername').innerHTML = inputNameElement.value;
+
+    } else if (inputAgeElement.value === 'over65') {
+        //ALTRIMENTI SE eta > 65
+        //calcolo lo sconto del 40%
+        console.log('priceOff40:', finalPrice40.toFixed(2))
+        document.getElementById('result').innerHTML = finalPrice40.toFixed(2);
+        document.getElementById('passengername').innerHTML = inputNameElement.value;
+
+    } else {
+        console.log('priceFull:', prezzoBase.toFixed(2))
+        document.getElementById('result').innerHTML = prezzoBase.toFixed(2);
+        document.getElementById('passengername').innerHTML = inputNameElement.value;
+    }
 })
 
 
