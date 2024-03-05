@@ -47,8 +47,7 @@
 
 
 //EVOLUZIONE NOMINATIVO
-const inputNameElement = document.getElementById('name')
-console.log(inputNameElement)
+
 
 //EVOLUZIONE CHIEDERE L'ETA
 const selectAgeRangeElement = document.getElementById('ageRange')
@@ -63,8 +62,7 @@ console.log(selectAgeRangeElement)
 
 
 //Evoluzione
-const inputDistanceElement = document.getElementById('distance')
-console.log(inputDistanceElement)
+
 
 
 
@@ -79,6 +77,14 @@ const submitElement = document.getElementById('submit')
 console.dir(submitElement)
 
 submitElement.addEventListener('click' ,function(){
+    //nome
+    const inputNameElement = document.getElementById('name')
+    console.log(inputNameElement)
+
+    //km
+    const inputDistanceElement = document.getElementById('distance')
+    console.log(inputDistanceElement)
+
     //SCONTO
 let discount = 0;
 
