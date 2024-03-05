@@ -46,9 +46,14 @@
 // console.log('your age:',age); //number
 
 
-//EVOLUZIONE
+//EVOLUZIONE NOMINATIVO
 const inputNameElement = document.getElementById('name')
 console.log(inputNameElement)
+
+//EVOLUZIONE CHIEDERE L'ETA
+const selectAgeRangeElement = document.getElementById('ageRange')
+console.log(selectAgeRangeElement)
+
 
 
 
@@ -61,24 +66,36 @@ console.log(inputNameElement)
 const inputDistanceElement = document.getElementById('distance')
 console.log(inputDistanceElement)
 
+
+
 //PREZZOBASE
 const prezzoBase = inputDistanceElement * 0.21;
 // console.log('prezzo base:' ,prezzoBase)
+
+
+
+//SUBMIT
+const submitElement = document.getElementById('submit')
+console.dir(submitElement)
+
+submitElement.addEventListener('click' ,function(){
+    
+})
 
 
 //SCONTO
 let discount = 0;
 
 //SCONTO PER MINORENNI
-if(inputNameElement < 18){
+if(selectAgeRangeElement < 18){
     //SE eta < 18
     //calcolo lo sconto del 20%
-    sconto = prezzoBase * 0.2;
+    discount = prezzoBase * 0.2;
 
-}else if (inputNameElement > 65){
+}else if (selectAgeRangeElement > 65){
     //ALTRIMENTI SE eta > 65
     //calcolo lo sconto del 40%
-    sconto = prezzoBase * 0.4;
+    discount = prezzoBase * 0.4;
 }
 
 
