@@ -40,11 +40,46 @@
 // Nota:
 // Se non vi sentite particolarmente creativi, questa potrebbe essere un’implementazione da seguire per il secondo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra.
 
+
+//CHIEDERE AL PASSEGGERO IL PROPRIO NOMINATIVO/ETA
+// let age = parseInt(prompt('write your age')); //number
+// console.log('your age:',age); //number
+
+
+//EVOLUZIONE
+const inputNameElement = document.getElementById('name')
+console.log(inputNameElement)
+
+
+
 //CHIEDERE AL PASSEGGIERO DI IMPOSTARE IL NUMERO DI KM
+// let KM = parseInt(prompt('write your distance')); //number
+// console.log('distance to do in KM:',KM); //number
 
 
+//Evoluzione
+const inputDistanceElement = document.getElementById('distance')
+console.log(inputDistanceElement)
+
+//PREZZOBASE
+const prezzoBase = inputDistanceElement * 0.21;
+// console.log('prezzo base:' ,prezzoBase)
 
 
+//SCONTO
+let discount = 0;
+
+//SCONTO PER MINORENNI
+if(inputNameElement < 18){
+    //SE eta < 18
+    //calcolo lo sconto del 20%
+    sconto = prezzoBase * 0.2;
+
+}else if (inputNameElement > 65){
+    //ALTRIMENTI SE eta > 65
+    //calcolo lo sconto del 40%
+    sconto = prezzoBase * 0.4;
+}
 
 
 
