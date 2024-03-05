@@ -46,12 +46,13 @@
 // console.log('your age:',age); //number
 
 
-//EVOLUZIONE NOMINATIVO
-
+//EVOLUZIONE ETA
+const inputAgeElement = document.getElementById('age')
+console.log(inputAgeElement)
 
 //EVOLUZIONE CHIEDERE L'ETA
-const selectAgeRangeElement = document.getElementById('ageRange')
-console.log(selectAgeRangeElement)
+// const selectAgeRangeElement = document.getElementById('ageRange')
+// console.log(selectAgeRangeElement)
 
 
 
@@ -62,12 +63,12 @@ console.log(selectAgeRangeElement)
 
 
 //Evoluzione
+const inputDistanceElement = document.getElementById('distance')
+console.log(inputDistanceElement)
 
 
 
 
-//PREZZOBASE
-const prezzoBase = inputDistanceElement * 0.21;
 // console.log('prezzo base:' ,prezzoBase)
 
 
@@ -76,28 +77,41 @@ const prezzoBase = inputDistanceElement * 0.21;
 const submitElement = document.getElementById('submit')
 console.dir(submitElement)
 
+
+
 submitElement.addEventListener('click' ,function(){
-    //nome
-    const inputNameElement = document.getElementById('name')
-    console.log(inputNameElement)
+    //eta
+    const age = inputAgeElement.value;
+    console.log(age)
 
     //km
-    const inputDistanceElement = document.getElementById('distance')
-    console.log(inputDistanceElement)
+    const km = inputDistanceElement.value;
+    console.log(km)
+
+
+    //PREZZOBASE
+    let prezzoBase = parseInt(km * 0.21);
 
     //SCONTO
-let discount = 0;
+    let discount = 0;
 
 //SCONTO PER MINORENNI
-if(selectAgeRangeElement < 18){
+if(age < 18){
     //SE eta < 18
     //calcolo lo sconto del 20%
-    discount = prezzoBase * 0.2;
+    priceOff20 = prezzoBase * 0.2;
+    finalPrice20 = prezzoBase - priceOff20
+    console.log('priceOff20:',finalPrice20.toFixed(2))
 
-}else if (selectAgeRangeElement > 65){
+}else if (age > 65){
     //ALTRIMENTI SE eta > 65
     //calcolo lo sconto del 40%
-    discount = prezzoBase * 0.4;
+    priceOff40 = prezzoBase * 0.4;
+    finalPrice40 = prezzoBase - priceOff40
+    console.log('priceOff40:',finalPrice40.toFixed(2))
+
+}else{
+    console.log('priceFull:',prezzoBase.toFixed(2))
 }
 })
 
