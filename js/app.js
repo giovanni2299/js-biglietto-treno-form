@@ -91,7 +91,8 @@ submitElement.addEventListener('click', function () {
     //km
     const km = parseFloat(inputDistanceElement.value); //float
 
-
+    //carriage
+    const carriage = titleCarriage.value;
 
     //PREZZOBASE
     let prezzoBase = km * 0.21; // float
@@ -112,7 +113,7 @@ submitElement.addEventListener('click', function () {
         console.log('priceOff20:', finalPrice20.toFixed(2))
         document.getElementById('result').innerHTML = finalPrice20.toFixed(2);
         document.getElementById('passengername').innerHTML = inputNameElement.value;
-        document.getElementById('carriage').innerHTML = inputCarriage.value;
+        document.getElementById('carriage').innerHTML = titleCarriage.value;
 
     } else if (inputAgeElement.value === 'over65') {
         //ALTRIMENTI SE eta > 65
