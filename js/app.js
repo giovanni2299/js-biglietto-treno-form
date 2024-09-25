@@ -56,6 +56,8 @@ const inputNameElement = document.getElementById('name')
 
 const titleCarriage = document.getElementById('carriage')
 
+const titleCpCode = document.getElementById('code')
+
 
 //CHIEDERE AL PASSEGGIERO DI IMPOSTARE IL NUMERO DI KM
 // let KM = parseInt(prompt('write your distance')); //number
@@ -92,7 +94,11 @@ submitElement.addEventListener('click', function () {
     const km = parseFloat(inputDistanceElement.value); //float
 
     //carriage
-    const carriage = titleCarriage.value;
+    const carriage = Math.floor(Math.random(1) * 12);
+
+
+    //CPCODE
+    const cpCode = Math.floor(Math.random(1000) * 9999)
 
     //PREZZOBASE
     let prezzoBase = km * 0.21; // float
@@ -113,7 +119,9 @@ submitElement.addEventListener('click', function () {
         console.log('priceOff20:', finalPrice20.toFixed(2))
         document.getElementById('result').innerHTML = finalPrice20.toFixed(2);
         document.getElementById('passengername').innerHTML = inputNameElement.value;
-        document.getElementById('carriage').innerHTML = titleCarriage.value;
+        document.getElementById('carriage').innerHTML = carriage;
+        document.getElementById('code').innerHTML = cpCode;
+
 
     } else if (inputAgeElement.value === 'over65') {
         //ALTRIMENTI SE eta > 65
@@ -121,11 +129,19 @@ submitElement.addEventListener('click', function () {
         console.log('priceOff40:', finalPrice40.toFixed(2))
         document.getElementById('result').innerHTML = finalPrice40.toFixed(2);
         document.getElementById('passengername').innerHTML = inputNameElement.value;
+        document.getElementById('carriage').innerHTML = carriage;
+        document.getElementById('code').innerHTML = cpCode;
+
+
 
     } else {
         console.log('priceFull:', prezzoBase.toFixed(2))
         document.getElementById('result').innerHTML = prezzoBase.toFixed(2);
         document.getElementById('passengername').innerHTML = inputNameElement.value;
+        document.getElementById('carriage').innerHTML = carriage;
+        document.getElementById('code').innerHTML = cpCode;
+        
+
     }
 })
 
